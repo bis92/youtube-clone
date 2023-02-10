@@ -1,3 +1,9 @@
+#root {
+  --youtube-color: #FF0000;
+  --card-bg-color: #F8F8F8;
+  --border-color: #F3F3F3;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

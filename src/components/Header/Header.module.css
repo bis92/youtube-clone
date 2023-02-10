@@ -1,0 +1,63 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+}
+
+.logo_and_name {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.logo {
+    display: flex;
+    margin-left: -10%;
+    color: var(--youtube-color);
+    font-size: 3.5rem;
+}
+
+.youtube_name {
+    font-size: 1.8rem;
+    display: flex;
+    font-weight: 500;
+}
+
+.input_form {
+    display: flex;
+    margin-left: 20%;
+    width: 80%;
+    height: 90%;
+    align-items: center;
+    margin-top: 0.3rem;
+}
+
+.input {
+    width: 50%;
+    height: 60%;
+    border: 2px solid var(--border-color);
+    border-radius: 2.5rem 0 0 2.5rem;
+    padding: 0;
+}
+
+.search_btn {
+    border-style: none;
+    background-color: var(--card-bg-color);
+    width: 8%;
+    height: 64%;
+    border: 2px solid var(--border-color);
+    border-left: 0;
+    border-radius: 0 2.5rem 2.5rem 0;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.search_btn:hover {
+    cursor: pointer;
+}
+
+.search_btn_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
