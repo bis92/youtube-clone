@@ -9,14 +9,14 @@
 } */
 
 .itemDetail {
-    width: 15.88rem;
+    width: 17.99rem;
     margin-right: 1rem;
     margin-bottom: 2rem;
     cursor: pointer;
 }
 
 .itemDetail_related {
-    width: 100%;
+    width: 500px;
     margin-bottom: 1.5rem;
     cursor: pointer;
     display: flex;
@@ -28,13 +28,44 @@
 }
 
 .thumbnail_related {
-    width: 66%;
+    width: 250px;
+    min-width: 250px;
     border-radius: 1rem;
     margin-right: 0.5rem;
 }
 
+.itemDetail_info {
+    display: flex;
+    flex-direction: column;
+}
+
 .title {
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.channel_name {
+    color: #969696;
+}
+
+.date {
+    color: #969696;
+}
+
+@media screen and (max-width: 1448px) {
+    .itemDetail_related {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        display: flex;
+    }
+    .thumbnail_related {
+        width: 20%;
+    }
+    .itemDetail_related {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 658px) { 

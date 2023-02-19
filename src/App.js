@@ -25,8 +25,8 @@ function App() {
     if(searchItem){
       url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&chart=mostPopular&maxResults=25&q=${searchItem}&key=${youtubeAPIkey}`
     } else {
-      url = './data/hotVideos.json'
-      // url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${youtubeAPIkey}`
+      // url = './data/hotVideos.json'
+      url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${youtubeAPIkey}`
     }
     await fetch(url)
       .then(res => res.json())
@@ -71,9 +71,10 @@ function App() {
           <Header
             initVideos={initVideos}
             handleSearchVideos={handleSearchVideos}
+            videoDetail
           />
           <VideoDetail 
-
+            videoItems={videos}
           />
         </div>
       )
