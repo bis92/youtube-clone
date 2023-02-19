@@ -3,10 +3,38 @@
     flex-flow: wrap;
 }
 
+/* .related_items {
+    display: flex;
+    flex-direction: column;
+} */
+
 .itemDetail {
-    width: 15rem;
+    width: 15.88rem;
     margin-right: 1rem;
     margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.itemDetail_related {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    display: flex;
+}
+
+.thumbnail {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.thumbnail_related {
+    width: 66%;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+}
+
+.title {
+    font-weight: bold;
 }
 
 @media screen and (max-width: 658px) { 
@@ -20,6 +48,6 @@
     .itemDetail {
       width: 22rem;
     }
-  }
+}
 
 

@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Link
+} from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
+import VideoDetail from './components/videoDetail/VideoDetail';
 import VideoItems from './components/VideoItems/VideoItems';
 // import path from 'path';
 
@@ -19,7 +25,8 @@ function App() {
     if(searchItem){
       url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&chart=mostPopular&maxResults=25&q=${searchItem}&key=${youtubeAPIkey}`
     } else {
-      url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${youtubeAPIkey}`
+      url = './data/hotVideos.json'
+      // url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=${youtubeAPIkey}`
     }
     await fetch(url)
       .then(res => res.json())
@@ -41,16 +48,43 @@ function App() {
     getHotVideos(searchValue);
   }, [searchValue])
 
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <div className='App'>
+          <Header
+            handleSearchVideos={handleSearchVideos}
+            initVideos={initVideos}
+          />
+          <VideoItems
+            videoItems={videos}
+          />
+        </div>
+      )
+    },
+    {
+      path: "/video/:videoId",
+      element: (
+        <div className='App'>
+          <Header
+            initVideos={initVideos}
+            handleSearchVideos={handleSearchVideos}
+          />
+          <VideoDetail 
+
+          />
+        </div>
+      )
+    }
+  ])
+
   return (
-    <div className="App">
-      <Header
-        handleSearchVideos={handleSearchVideos}
-        initVideos={initVideos}
-      />
-      <VideoItems
-        videoItems={videos}
-      />
-    </div>
+    <RouterProvider
+      router={router}
+    >
+    </RouterProvider>
   );
 }
 
